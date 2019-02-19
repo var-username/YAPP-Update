@@ -1,0 +1,57 @@
+name: YAPP
+version: 1.4.1
+description: Yet Another Permissions Plugin
+author: nisovin
+website: http://nisovin.com/yapp
+
+main: com.nisovin.yapp.YAPP
+softdepend: [Vault, TagAPI]
+
+commands:
+    yapp:
+        description: Modify permission settings.
+        aliases: [permissions, permission, perms, perm, yap]
+        permission: yapp.admin
+    yapppromote:
+        description: Promotes a player to the next group.
+        usage: /<command> [o:]<player> [world]
+        aliases: [promote]
+        permission: yapp.promote
+    yappdemote:
+        description: Demotes a player to the previous group.
+        usage: /<command> [o:]<player> [world]
+        aliases: [demote]
+        permission: yapp.demote
+    yappconvert:
+        description: Convert permission data from another plugin
+        usage: /<command> <pex|permbukkit|gm>
+        permission: yapp.admin
+permissions:
+    yapp.*:
+        description: All YAPP permissions.
+        default: op
+        children:
+            yapp.build: true
+            yapp.admin: true
+            yapp.promote: true
+            yapp.demote: true
+            yapp.promote.*: true
+            yapp.demote.*: true
+    yapp.build:
+        description: Allows the player to build.
+        default: false
+    yapp.admin:
+        description: Modify permission settings.
+        default: op
+    yapp.promote:
+        description: General permission to promote players.
+        default: op
+    yapp.demote:
+        description: General permission to demote players.
+        default: op
+    yapp.promote.*:
+        description: Promote players on any ladder.
+        default: op
+    yapp.demote.*:
+        description: Demote players on any ladder.
+        default: op

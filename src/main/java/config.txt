@@ -1,0 +1,47 @@
+== GENERAL ==
+
+debug               : false
+
+default group       : members
+use build perm      : true
+modal menu          : true
+enable wildcard     : true
+
+update player list  : true
+update display name : true
+display name format : %color%%name%
+use chat formatting : true
+chat format         : %prefix%%color%<%name%> &f%message%
+
+set group perm      : false
+set player metadata : false
+set nameplate color : false
+
+== LADDERS ==
+
+main : members, vips, mods, admins
+
+== DENY PERMISSIONS ==
+
+place    : false
+break    : false
+craft    : false
+pickup   : false
+drop     : false
+useitem  : false
+useblock : false
+interact : false
+targeted : false
+attack   : false
+damage   : false
+chat     : false
+commands : false
+
+== MYSQL ==
+
+enabled : false
+host    : localhost
+user    : bukkit
+pass    : walrus
+db      : minecraft
+prefix  : yapp_
